@@ -137,7 +137,7 @@ if [ -f "$IDE_HOME/Contents/Info.plist" -a -z "$IDE_PROPERTIES_PROPERTY" ]; then
   MAC_VM_OPTIONS="`osascript \"$IDE_BIN_HOME/info_plist_parser.scpt\"$INFO_PLIST_PARSER_OPTIONS`"
 fi
 
-REQUIRED_JVM_ARGS="-Xbootclasspath/a:../lib/boot.jar -Didea.paths.selector=@@system_selector@@ $IDE_PROPERTIES_PROPERTY $REQUIRED_JVM_ARGS"
+REQUIRED_JVM_ARGS="-Xbootclasspath/a:../lib/boot.jar -Dawt.useSystemAAFontSettings=on -Didea.paths.selector=@@system_selector@@ $IDE_PROPERTIES_PROPERTY $REQUIRED_JVM_ARGS"
 
 JVM_ARGS="$JVM_ARGS $REQUIRED_JVM_ARGS $MAC_VM_OPTIONS"
 
